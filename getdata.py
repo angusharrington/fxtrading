@@ -13,7 +13,7 @@ access_token='ef35b35715762224cdc3b30fc0fbe3b2-77f270a7e174e687ad25279855e92a67'
 client=API(access_token)
 
 
-def getdata(begin_time, end_time, instrument, granularity ='S5',):
+def getdata(begin_time, end_time, instrument, granularity ='M1',):
 
     '''
     Creates a .csv file for fx data. Colums are: time, open, high, low, close, volume.
@@ -21,7 +21,7 @@ def getdata(begin_time, end_time, instrument, granularity ='S5',):
     Granularity is set as 5s but can be changed. Step of 21600 to 6h in UNIX_time. Depends on granularity. 
     For 5s 6 hours is maximum granularity time. For 1m 21600*12 for 5m 21600*12*5.
     '''
-    step=21600
+    step=21600*12
 
 
   
@@ -77,5 +77,5 @@ def getdata(begin_time, end_time, instrument, granularity ='S5',):
     dataset.to_csv(instrument+"_"+granularity+"_"+dataset['time'][0].split('T')[0]+"_"+dataset['time'][len(dataset)-1].split('T')[0]+'.csv',index=False)
 
 # %%
-getdata("2018-01-07 00:00:00", "2018-01-09 00:00:00", "EUR_USD")
+getdata("2018-01-01 00:00:00", "2019-01-01 00:00:00", "GBP_USD")
 # %%
