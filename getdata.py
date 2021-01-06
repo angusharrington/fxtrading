@@ -77,5 +77,5 @@ def getdata(begin_time, end_time, instrument, granularity ='M1',):
     dataset.to_csv(instrument+"_"+granularity+"_"+dataset['time'][0].split('T')[0]+"_"+dataset['time'][len(dataset)-1].split('T')[0]+'.csv',index=False)
 
 # %%
-getdata("2018-01-01 00:00:00", "2019-01-01 00:00:00", "GBP_USD")
+getdata("2019-01-01 00:00:00", "2019-01-11 00:00:00", "GBP_USD")
 # %%

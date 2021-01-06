@@ -120,16 +120,5 @@ print(model.summary())
 model.compile(loss="mse", optimizer="adam", metrics=["categorical_accuracy"])
 model.fit(X, y, validation_data=(X_val, y_val), batch_size=batch_size, epochs=20, shuffle=False, verbose=2)
 
-#%%
-save_model(model, 'model_lstm_singlesteppred')
-
-fig = plt.figure(figsize=(12, 8))
-ax1 = fig.subplots(1)
-ax1.set_title('Model Loss')
-ax1.set(xlabel='Epoch', ylabel='Loss')
-ax1.plot(history.history['loss'][7:], label='Train Loss')
-ax1.plot(history.history['val_loss'][7:], label='Val Loss')
-ax1.legend()
-# %%
 
 # %%

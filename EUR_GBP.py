@@ -8,7 +8,7 @@ from tensorflow.keras import layers
 # %%
 
 column_names = ["DateTime", "Price", 'x', 'x1', 'x2', 'x3']
-data = pd.read_csv(r'C:\Users\angus\OneDrive\Documents\Deep learning trader\Copy of DAT_XLSX_EURGBP_M1_2018.csv', names=column_names)
+data = pd.read_csv('GBP_USD_M1_2019-01-01_2019-01-10.csv', names=column_names)
 price = data.Price.tolist()
 
 slices = []
